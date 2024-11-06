@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 import math
 import matplotlib.pyplot as plt
+
 class ImageStatistics:
     def __init__(self, image):
         self.math = math
@@ -13,17 +14,17 @@ class ImageStatistics:
         self.std_val = 0
         self.n_pixel = 0
 
-    def rgb2gray(self, image):
-        height, width, _ = image.shape
-        gray_image = [[0] * width for _ in range(height)]
-
-        for i in range(height):
-            for j in range(width):
-                r, g, b = image[i][j]
-                gray_val = ((0.2989 * r) + (0.5870 * g) + (0.1140 * b))
-                gray_image[i][j] = gray_val
-
-        return gray_image
+    # def rgb2gray(self, image):
+    #     height, width, _ = image.shape
+    #     gray_image = [[0] * width for _ in range(height)]
+    #
+    #     for i in range(height):
+    #         for j in range(width):
+    #             r, g, b = image[i][j]
+    #             gray_val = ((0.2989 * r) + (0.5870 * g) + (0.1140 * b))
+    #             gray_image[i][j] = gray_val
+    #
+    #     return gray_image
 
     def flatten(self, array):
         return [titik for baris in array for titik in baris]
@@ -93,3 +94,5 @@ image = cv2.imread(image_path)
 image_statistics = ImageStatistics(image)
 
 image_statistics.display_statistics()
+
+#%%
