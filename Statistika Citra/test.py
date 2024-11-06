@@ -1,0 +1,3 @@
+import ImageStatistics
+
+sk = Skewness('')
